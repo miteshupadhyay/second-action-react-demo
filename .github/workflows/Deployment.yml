@@ -5,6 +5,9 @@ on:
       - opened
       - synchronize
       - reopened
+      - edited
+    branches:
+      - dev
   workflow_dispatch:
 jobs:
   deploy:
