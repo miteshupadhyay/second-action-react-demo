@@ -40,9 +40,12 @@ jobs:
         run: echo "Deploying..."
       - name: Output Filename
         run:  echo " {{needs.build.outputs.script-file }}"
-
+      - name: Cache Dependecies
+        with:
+          - path: ~/.npm
+            key: deps-node-modules-${{ hashFiles('**/package-lock.json') }}
       - name: Install Dependencies
-          run: npm ci
+        run: npm ci
 
 
 
