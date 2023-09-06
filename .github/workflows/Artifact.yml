@@ -1,6 +1,6 @@
 name: Deploy Project
-on: workflow_dispatch
-  branches: release
+on: push
+      branches: release
 jobs:
   build:
     runs-on: ubuntu-latest
